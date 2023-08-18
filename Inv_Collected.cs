@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Inv_Collected : MonoBehaviour
 {
-    //Название объекта
+    // The name of the object 
     public string name;
-    //Картинка(спрайт), который будет отображаться в инвентаре
+    // The image(sprite) that will be shown in the inventory
     public Sprite image;
-    //Ссылка на скрипт ивентаря
+    // A reference to the inventory script
     private Inv_Inventory inventory;
 
     private void Start()
     {
-        //Ищем объект со скриптом инвентаря и кладём его в переменную
+        // Looking for an object with the inventory script and storing it in a variable
         inventory = FindObjectOfType<Inv_Inventory>();
     }
 
     private void OnTriggerEnter(Collider other)
     {                 
-        //При подборе предмета вызываем метод добавления предмета в скрипте инвентаря
-        //И передаем спрайт, имя и объект, который мы подобрали
+        // Whenever the object is picked, we call the AddItem method from the inventory script, passing
+        // the object's sprite, name, and the object collected by the player
         inventory.AddItem(image, name, gameObject);
     }
 }
