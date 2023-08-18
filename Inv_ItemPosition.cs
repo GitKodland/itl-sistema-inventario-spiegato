@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Inv_ItemPosition : MonoBehaviour
 {
-    //Выбираем позицию тела, на которой должен появится объект инвентаря
+    //Selecting the body part we want the object to appear at
     public enum ItemPos
     {
         Head,
