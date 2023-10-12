@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Inv_Collected : MonoBehaviour
 {
-    // The name of the object 
+    // Il nome dell'oggetto 
     public string name;
-    // The image(sprite) that will be shown in the inventory
+    // L'immagine (sprite) che sarà mostrata nell'inventario
     public Sprite image;
-    // A reference to the inventory script
+    // Un riferimento allo script dell'inventario
     private Inv_Inventory inventory;
 
     private void Start()
     {
-        // Looking for an object with the inventory script and storing it in a variable
+        // Cercare un oggetto con lo script dell'inventario e memorizzarlo in una variabile
         inventory = FindObjectOfType<Inv_Inventory>();
     }
 
     private void OnTriggerEnter(Collider other)
     {                 
-        // Whenever the object is picked, we call the AddItem method from the inventory script, passing
-        // the object's sprite, name, and the object collected by the player
+        // Ogni volta che l'oggetto viene prelevato, si richiama il metodo AddItem dallo script dell'inventario, passando il metodo
+        // lo sprite dell'oggetto, il nome e l'oggetto raccolto dal giocatore
         inventory.AddItem(image, name, gameObject);
     }
 }
